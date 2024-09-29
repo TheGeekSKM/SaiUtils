@@ -1,0 +1,12 @@
+{
+    "name": "com.mangopudding.saiutils",
+    "version": "1.0.0",
+    "displayName": "Sai Utils",
+    "description": "This is an example package",
+    "unity": "2021.3",
+    "author": {
+      "name": "Sai Mangipudi",
+      "email": "thegeekskm101@gmail.com",
+      "url": "https://saimangipudi.dev/"
+    }
+  }
