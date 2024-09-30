@@ -5,3 +5,7 @@
 ## [1.0.1] - 2024-09-21
 ### Singletons!!
 - Added Generic Singletons to the mix. Now make any class a child of Singleton<T> and boom! Singleton!!
+
+## [1.0.1] - 2024-09-21
+### Transform Extensions
+- Added SetPosition and SetLocalPosition to Transforms
