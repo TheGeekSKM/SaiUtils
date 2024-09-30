@@ -1,10 +1,12 @@
 using UnityEngine.EventSystems ;
 
-public static class SaiStaticUtils
+namespace SaiUtils
 {
-    public static bool IsMouseOverUI()
+    public static class SaiStaticUtils
     {
-        return EventSystem.current.IsPointerOverGameObject();
+        public static bool IsPointerOverUI()
+        {
+            return EventSystem.current.IsPointerOverGameObject();
+        }
     }
-    
 }
