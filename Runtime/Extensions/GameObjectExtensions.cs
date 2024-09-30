@@ -24,5 +24,6 @@ namespace SaiUtils.Extensions
             if (!component) component = gameObject.AddComponent<T>();
             return component;
         }
+
     }
 }

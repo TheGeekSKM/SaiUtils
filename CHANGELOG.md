@@ -16,3 +16,8 @@
 
 ## [1.0.4] - 2024-09-21
 ### Vector2Events and Trigger Controllers
+
+## [1.0.5] - 2024-09-22
+### Transform Extension Update -> GetClosestEntity
+- Supply in a list of entities and GetClosestEntity will return the entity that is the closest to the player. 
+  - It also helps that this is relatively more performant than using the Vector3.Distance since it does not use any sqrt functions!!
