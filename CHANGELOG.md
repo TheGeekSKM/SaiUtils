@@ -13,3 +13,6 @@
 ## [1.0.3] - 2024-09-21
 ### SaiStaticUtils
 - Added a static class for all my static function needs!!
+
+## [1.0.4] - 2024-09-21
+### Vector2Events and Trigger Controllers
