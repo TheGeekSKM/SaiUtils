@@ -1,4 +1,4 @@
-using UnityEngine.EventSystems ;
+using UnityEngine.EventSystems;
 
 namespace SaiUtils
 {
