@@ -36,7 +36,7 @@
     void OnDestroy() => newTimer.Dispose(); // important to call Dispose!!
   ```
 
-## [1.0.5] - 2024-09-23
+## [1.0.7] - 2024-10-01
 ### Optional Variables
 - Credit goes to aarthificial for originally showcasing this!! [Original Post](https://gist.github.com/aarthificial/f2dbb58e4dbafd0a93713a380b9612af)
 ```c#
@@ -46,3 +46,7 @@
     if (_interactionRange.HasValue) DoSomething(_interactionRange.Value)
   }
 ```
+
+## [1.0.8] - 2024-10-01
+### Additional Extensions
+- Credit goes to [Monoflauta](https://monoflauta.com/2021/07/27/11-useful-unity-c-extension-methods/)

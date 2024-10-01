@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SaiUtils.Extensions
@@ -68,6 +69,43 @@ namespace SaiUtils.Extensions
                 }
             }
             return bestTarget;
+        }
+
+        public static void LocalReset(this Transform transform)
+        {
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
+        }
+
+        public static void Reset(this Transform transform)
+        {
+            transform.position = Vector3.zero;
+            transform.rotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
+        }
+
+        public static IEnumerator LerpMoveTo(this Transform transform, Vector3 target, float duration)
+        {
+            Vector3 diff = target - transform.position;
+            float counter = 0;
+            while (counter < duration)
+            {
+                counter += Time.deltaTime;
+                transform.position += diff * (Time.deltaTime / duration);
+                yield return null;
+            }
+        }
+
+        public static IEnumerator LerpRotateTo(this Transform transform, Quaternion target, float duration)
+        {
+            float counter = 0;
+            while (counter < duration)
+            {
+                counter += Time.deltaTime;
+                transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime / duration);
+                yield return null;
+            }
         }
     }
 }
