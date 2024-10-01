@@ -21,3 +21,17 @@
 ### Transform Extension Update -> GetClosestEntity
 - Supply in a list of entities and GetClosestEntity will return the entity that is the closest to the player. 
   - It also helps that this is relatively more performant than using the Vector3.Distance since it does not use any sqrt functions!!
+
+## [1.0.6] - 2024-09-22
+### Improved Timers
+- Credit goes to git-amend for originally showcasing this!!
+- Created a CountdownTimer
+  ```c#
+    CountdownTimer newTimer = new CountdownTimer(timerDuration) // timerDuration is a float
+
+    void Start() => newTimer.Start();
+
+    // no need to use newTimer.Tick() in Update() since it is already hooked up via the PlayerLoop System
+
+    void OnDestroy() => newTimer.Dispose(); // important to call Dispose!!
+  ```
