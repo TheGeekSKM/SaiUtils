@@ -35,3 +35,14 @@
 
     void OnDestroy() => newTimer.Dispose(); // important to call Dispose!!
   ```
+
+## [1.0.5] - 2024-09-23
+### Optional Variables
+- Credit goes to aarthificial for originally showcasing this!! [Original Post](https://gist.github.com/aarthificial/f2dbb58e4dbafd0a93713a380b9612af)
+```c#
+  [SerializeField] Optional<float> _interactionRange = new Optional<float>(2f);
+
+  void Update() {
+    if (_interactionRange.HasValue) DoSomething(_interactionRange.Value)
+  }
+```
