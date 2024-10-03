@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
+using SaiUtils.Extensions;
 using System;
 
 namespace SaiUtils.Triggers
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Trigger2DController : MonoBehaviour
-    {[Header("Settings")]
+    {
+        [Header("Settings")]
         [SerializeField] LayerMask _desiredLayer;
+        [SerializeField] Collider2D _collider2D;
 
         [Header("Events")]
         [SerializeField] UnityEvent<GameObject> _onTriggerEnter;
@@ -15,6 +19,12 @@ namespace SaiUtils.Triggers
         public Action<GameObject> OnTriggerEnterAction;
         public Action<GameObject> OnTriggerStayAction;
         public Action<GameObject> OnTriggerExitAction;
+
+        void OnValidate()
+        {
+            if (!_collider2D) _collider2D = GetComponent<Collider2D>();
+            _collider2D.isTrigger = true;
+        }
 
         void OnTriggerEnter2D(Collider2D other)
         {
