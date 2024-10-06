@@ -38,7 +38,7 @@ namespace SaiUtils.Triggers
             
             if (IsDesiredLayer(other.gameObject))
             {
-                Debug.Log($"Triggered by {other.name}");
+                // Debug.Log($"Triggered by {other.name}");
                 _onTriggerEnter?.Invoke(other.gameObject);
                 OnTriggerEnterAction?.Invoke(other.gameObject);
             }
@@ -48,7 +48,7 @@ namespace SaiUtils.Triggers
         {
             if (IsDesiredLayer(other.gameObject))
             {
-                Debug.Log($"Triggered by {other.name}");
+                // Debug.Log($"Triggered by {other.name}");
                 _onTriggerStay?.Invoke(other.gameObject);
                 OnTriggerStayAction?.Invoke(other.gameObject);
             }
@@ -58,7 +58,7 @@ namespace SaiUtils.Triggers
         {
             if (IsDesiredLayer(other.gameObject))
             {
-                Debug.Log($"Triggered by {other.name}");
+                // Debug.Log($"Triggered by {other.name}");
                 _onTriggerExit?.Invoke(other.gameObject);
                 OnTriggerExitAction?.Invoke(other.gameObject);
             }
