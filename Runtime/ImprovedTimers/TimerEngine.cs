@@ -29,7 +29,7 @@ namespace SaiUtils.ImprovedTimers
 #if UNITY_EDITOR
             EditorApplication.playModeStateChanged -= OnPlayModeState;
             EditorApplication.playModeStateChanged += OnPlayModeState;
-#endif
+
 
             // this is because Unity does not always refresh the domain when entering play mode and the timer manager is not cleared
             static void OnPlayModeState(PlayModeStateChange state)
@@ -41,9 +41,13 @@ namespace SaiUtils.ImprovedTimers
                     PlayerLoop.SetPlayerLoop(currentPlayerLoop);
 
                     TimerManager.Clear();
+
+
                 }
             }
+#endif
         }
+
 
         static void RemoveTimerManager<T>(ref PlayerLoopSystem loop)
         {
@@ -62,6 +66,4 @@ namespace SaiUtils.ImprovedTimers
             return PlayerLoopUtils.InsertSystem<T>(ref loop, timerSystem, index);
         }
     }
-
-    
 }
