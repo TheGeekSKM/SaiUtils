@@ -3,6 +3,7 @@ using UnityEditor;
 
 namespace SaiUtils.OptionalVariables
 {
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(Optional<>))]
     public class OptionalPropertyDrawer : PropertyDrawer
     {
@@ -33,4 +34,5 @@ namespace SaiUtils.OptionalVariables
             EditorGUI.EndProperty();
         }
     }
+#endif
 }
