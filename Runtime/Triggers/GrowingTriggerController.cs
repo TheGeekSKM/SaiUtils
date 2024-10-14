@@ -9,12 +9,10 @@ namespace SaiUtils.Triggers
     {
         [SerializeField] TriggerController _triggerController;
         [SerializeField] float _finalVisionRadius = 10f;
-        bool initialized = false;
 
         public void Initialize(float finalRadius, float existTime)
         {
             _finalVisionRadius = finalRadius;
-            initialized = true;
 
             if (!_triggerController) _triggerController = gameObject.GetOrAdd<TriggerController>();
 

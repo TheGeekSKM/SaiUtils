@@ -6,7 +6,7 @@ namespace SaiUtils.StateMachine
     {
         public bool Evaluate()
         {
-            return true;
+            return false;
         }
     }
 }

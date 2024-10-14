@@ -40,6 +40,14 @@ namespace SaiUtils.StateMachine
         public void SetState(IState state)
         {
             _currentStateNode = _stateNodes[state.GetType()];
+
+            // if it doesn't exist, add it to the dictionary
+            if (_currentStateNode == null)
+            {
+                _currentStateNode = new StateNode(state);
+                _stateNodes.Add(state.GetType(), _currentStateNode);
+            }
+
             _currentStateNode.State?.OnEnter(); 
         }
 
