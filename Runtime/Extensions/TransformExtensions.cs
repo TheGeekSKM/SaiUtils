@@ -126,5 +126,51 @@ namespace SaiUtils.Extensions
                 yield return null;
             }
         }
+
+        public static bool ContainedWithin(this Transform transform, Transform container)
+        {
+            return container.position.x - container.localScale.x / 2 < transform.position.x &&
+                   container.position.x + container.localScale.x / 2 > transform.position.x &&
+                   container.position.y - container.localScale.y / 2 < transform.position.y &&
+                   container.position.y + container.localScale.y / 2 > transform.position.y &&
+                   container.position.z - container.localScale.z / 2 < transform.position.z &&
+                   container.position.z + container.localScale.z / 2 > transform.position.z;
+        }
+
+        public static bool ContainedWithin(this Transform transform, Collider container)
+        {
+            return container.bounds.Contains(transform.position);
+        }
+
+        public static bool ContainsPoint(this Transform container, Vector3 point, float range = 2, bool ignoreY = false, bool ignoreX = false, bool ignoreZ = false)
+        {
+            if (ignoreY)
+            {
+                return container.position.x - range < point.x &&
+                       container.position.x + range > point.x &&
+                       container.position.z - range < point.z &&
+                       container.position.z + range > point.z;
+            }
+            if (ignoreX)
+            {
+                return container.position.y - range < point.y &&
+                       container.position.y + range > point.y &&
+                       container.position.z - range < point.z &&
+                       container.position.z + range > point.z;
+            }
+            if (ignoreZ)
+            {
+                return container.position.x - range < point.x &&
+                       container.position.x + range > point.x &&
+                       container.position.y - range < point.y &&
+                       container.position.y + range > point.y;
+            }
+            return container.position.x - range < point.x &&
+                   container.position.x + range > point.x &&
+                   container.position.y - range < point.y &&
+                   container.position.y + range > point.y &&
+                   container.position.z - range < point.z &&
+                   container.position.z + range > point.z;
+        }
     }
 }
