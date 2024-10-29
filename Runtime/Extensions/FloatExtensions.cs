@@ -9,4 +9,12 @@ namespace SaiUtils.Extensions
             return value >= min && value <= max;
         }
     }
+
+    public static class Vector2Extensions
+    {
+        public static float GetRandomValue(this Vector2 vector)
+        {
+            return Random.Range(vector.x, vector.y);
+        }
+    }
 }
