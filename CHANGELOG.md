@@ -50,3 +50,8 @@
 ## [1.0.8] - 2024-10-01
 ### Additional Extensions
 - Credit goes to [Monoflauta](https://monoflauta.com/2021/07/27/11-useful-unity-c-extension-methods/)
+
+
+## [1.0.9] - 2024-11-01
+### ReadMe Component
+- Credit goes to [neoneper](https://github.com/neoneper/UnityReadme)
