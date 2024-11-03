@@ -1,13 +1,36 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace SaiUtils
 {
     public static class SaiStaticUtils
     {
-        public static bool IsPointerOverUI()
+        public static bool IsPointerOverUI(bool showUINameInDebug = false)
         {
-            return EventSystem.current.IsPointerOverGameObject();
+            PointerEventData pointerData = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+
+            // List to hold all raycast results
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, results);
+
+            bool isHoveringOverUI = false;
+
+            foreach (RaycastResult result in results)
+            {
+                Graphic graphic = result.gameObject.GetComponent<Graphic>();
+                if (graphic != null && graphic.raycastTarget)
+                {
+                    if (showUINameInDebug) Debug.Log($"Hovering over UI element: {result.gameObject.name}");
+                    isHoveringOverUI = true;
+                }
+            }
+
+            return isHoveringOverUI;
         }
 
         public static (RaycastHit hit, Ray ray) MouseHit(LayerMask layerMask, float maxDistance = 1000f, bool debug = false) {
