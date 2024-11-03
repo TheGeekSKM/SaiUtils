@@ -275,11 +275,23 @@ namespace SaiUtils.ReadmeSystem.Editor
             {
                 var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(guid));
 
-                Readme readme = (Readme)readmeObject;
-                if (readme.isRoot)
+                Readme readme;
+                if (readmeObject is Readme)
                 {
-                    results.Add(readme);
+                    readme = (Readme)readmeObject;
+                }
+                else
+                {
+                    continue;
+                }
 
+                if (readme != null)
+                {
+                    if (readme.isRoot)
+                    {
+                        results.Add(readme);
+
+                    }
                 }
             }
 
