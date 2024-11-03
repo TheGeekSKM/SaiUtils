@@ -116,5 +116,17 @@ namespace SaiUtils
         {
             return layerMask == (layerMask | (1 << layer));
         }
+
+        public static Vector3 GetRandomPointWithinBounds(List<Transform> bounds)
+        {
+            if (bounds == null || bounds.Count == 0)
+                return Vector3.zero;
+
+            var randomX = Random.Range(bounds[0].position.x, bounds[1].position.x);
+            var randomY = Random.Range(bounds[0].position.y, bounds[1].position.y);
+            var randomZ = Random.Range(bounds[0].position.z, bounds[1].position.z);
+
+            return new Vector3(randomX, randomY, randomZ);
+        }
     }
 }
