@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SaiUtils.GameEvents
 {
-    [CreateAssetMenu(fileName = "New Vector2 Event", menuName = "GameEvents/Vector2Event")]
+    [CreateAssetMenu(fileName = "New Vector2 Event", menuName = "SaiUtils/GameEvents/Vector2Event")]
     public class VectorTwoEvent : BaseGameEvent<UnityEngine.Vector2> {}
 
     // I don't need to add a Raise method here because it is already implemented in the BaseGameEvent class

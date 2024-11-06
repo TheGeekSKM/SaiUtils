@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SaiUtils.GameEvents
 {
-    [CreateAssetMenu(fileName = "New Bool Event", menuName = "GameEvents/BoolEvent")]
+    [CreateAssetMenu(fileName = "New Bool Event", menuName = "SaiUtils/GameEvents/BoolEvent")]
     public class BoolEvent : BaseGameEvent<bool> {}
 
     // I don't need to add a Raise method here because it is already implemented in the BaseGameEvent class
