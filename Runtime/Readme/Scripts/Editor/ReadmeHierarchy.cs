@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
+#if UNITY_EDITOR
 [InitializeOnLoad]
 public class ReadmeHierarchy
 {
@@ -81,4 +83,4 @@ public class ReadmeHierarchy
         }
     }*/
 }
-
+#endif

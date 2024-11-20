@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public static class ReadmeEditorStyles
 {
     private static GUIStyle m_LinkStyle;
@@ -60,3 +61,4 @@ public static class ReadmeEditorStyles
     }
 
 }
+#endif

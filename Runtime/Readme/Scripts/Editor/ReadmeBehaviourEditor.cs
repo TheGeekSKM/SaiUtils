@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using SaiUtils.ReadmeSystem;
-
 namespace SaiUtils.ReadmeSystem.Editor
 {
+
+#if UNITY_EDITOR
     [CustomEditor(typeof(ReadmeBehaviour))]
     public class ReadmeBehaviourEditor : UnityEditor.Editor
     {
@@ -116,4 +117,5 @@ namespace SaiUtils.ReadmeSystem.Editor
 
 
     }
+#endif
 }
