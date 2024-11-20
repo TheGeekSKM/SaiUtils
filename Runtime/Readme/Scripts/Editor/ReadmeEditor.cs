@@ -8,7 +8,7 @@ using System.Linq;
 namespace SaiUtils.ReadmeSystem.Editor
 {
 
-
+#if UNITY_EDITOR
     [CustomEditor(typeof(Readme))]
     [InitializeOnLoad]
     public class ReadmeEditor : UnityEditor.Editor
@@ -321,7 +321,7 @@ namespace SaiUtils.ReadmeSystem.Editor
     }
 
 
-
+#endif
 
 
 }
