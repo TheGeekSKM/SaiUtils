@@ -128,5 +128,13 @@ namespace SaiUtils
 
             return new Vector3(randomX, randomY, randomZ);
         }
+
+        public static void CreateIfNotExists(string path)
+        {
+            if (!System.IO.Directory.Exists(path))
+            {
+                System.IO.Directory.CreateDirectory(path);
+            }
+        }
     }
 }
